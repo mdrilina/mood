@@ -1,17 +1,297 @@
-body  {
-    background-image: url("Instagram_back.JPG");
+
+  /* Style the body */
+  body {
+    font-family: Arial;
+    margin: 0 5% 0 5%;
+  }
+  h2{
+    font-family: Copperplate, Papyrus, fantasy;
+  }
+
+  .mlogo{
+    height: 30px;
+   
 
   }
 
-  div {
-  margin: auto;
-  width: 60%;
-  border: 3px solid #73AD21;
-  padding: 50px;
-  margin-top: 200px;
-  background-color: gray; opacity:0.8;
+
+
+  * {
+    box-sizing: border-box;
   }
-  
-  div.logo {
+
+  /*Side fixed*/
+  .sidefixed {
+    position: fixed;
+    transform: rotate(-90deg);
+    display: flex;
+    background-color: rgb(27, 156, 179);
+    justify-content: center;
+    top: 60%;
+    right: -50px;
+  }
+
+  .sidefixed a{
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
     text-align: center;
   }
+  .sidefixed a:hover {
+    background-color: rgb(39, 214, 245);
+    color: black;
+  }
+
+  
+  /* Style the Warning text and button in Top */
+  .warnbox{
+    background:#e7e7e7;
+    padding:10px;
+    display: flex;
+   
+  }
+  .warningtext{
+    font-size: 12px;
+    font: italic;
+    padding: 15px, 15px;
+  }
+  .button{
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 40px;
+
+    }
+  .button:hover {background-color: #a09f9f;}
+
+  
+  /* Header logo */
+  .header {
+    background-image: url("Instagram_back.JPG");
+    padding: 40px;
+    text-align: center;
+    color: white;
+  
+  }
+  
+  .transbox {
+ 
+  margin: 5px;
+  background-color: black;
+  opacity: 0.8;
+  }
+
+
+.logo {
+  
+  margin: auto;
+  width: 60%;
+  padding: 60px;
+  }
+
+  .title{
+    text-align:center;
+    margin: 5%;
+  }
+  /* Style the top navigation bar */
+  .navbar {
+    display: flex;
+    background-color: rgb(27, 156, 179);
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+  
+  }
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-family: Copperplate, Papyrus, fantasy;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    
+  }
+  .navbar a img{
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: rgb(39, 214, 245);
+    color: black;
+  }
+
+  /*Galerry*/
+  .gallerycontainer{
+    margin: 5%;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .gallery {
+    flex: 25%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  
+  
+  .responsive {
+    padding: 0 6px;
+    
+    width: 24.99999%;
+  }
+/* Popular category */
+.category {  
+  display: flex;
+  flex-wrap: wrap;
+  box-align: center;
+  width: 100%;
+  
+}
+.popular{
+  margin: auto;
+  text-align: center;
+  opacity: 1.0;
+
+}
+.popular a{
+ text-decoration: none;
+ color: black;
+}
+.popular svg:hover{
+  opacity: 0.5;
+}
+  
+  /* Column News */
+  .row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+  /* Main column */
+  .main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+  }
+  
+  /* Fake image, just for this example */
+  .newsimg {
+    width: 100%;
+  }
+  .newsimg img{
+    opacity: 1.0;
+  }
+  .newsimg img:hover{
+    opacity: 0.5;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    color: white;
+  }
+  
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+    .row, .navbar {   
+      flex-direction: column;
+    }
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+
+  /* KONTAKTI---------------------------*/
+    /*Kontakti header*/
+    .contactsheader{
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+    }
+
+  .contacts{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contactsleft{
+    flex: 70%;
+    padding: 20px;
+}
+
+.contactsright{
+  flex: 30%;
+  padding: 20px;
+}
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: rgb(27, 156, 179);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: rgb(39, 214, 245);
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
