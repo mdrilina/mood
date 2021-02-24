@@ -103,6 +103,7 @@
   /* Style the top navigation bar */
   .navbar {
     display: flex;
+    z-index: 2;
     background-color: rgb(27, 156, 179);
     justify-content: center;
     position: -webkit-sticky;
