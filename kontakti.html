@@ -38,12 +38,13 @@
     <div class="contactsleft">
         <h2>Sazinies ar mums</h2>
         <div class="container">
-            <form action="https://mdrilina.000webhostapp.com/" method="POST">
+            <form action="https://mdrilina.000webhostapp.com/" method="POST" onsubmit="sendMail.bind(this)(event)">
               <label for="fname">Vārds</label>
               <input type="text" id="name" name="name">
           
               <label for="email">Epasts</label>
               <input type="text" id="email" name="email">
+                <input type="hidden" name="source">
           
               <label for="theme">Jautājuma tēma</label>
               <select id="theme" name="theme">
@@ -73,6 +74,26 @@
 
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8704.195021552392!2d24.09665523227505!3d56.94796594579916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd7054ee4c5%3A0xf38a7b5d7e78c30f!2sVecr%C4%ABga%2C%20Central%20District%2C%20Riga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1611427348975!5m2!1sen!2slv" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-  
+  <script>
+    document.querySelector('[name="source"]').value = location.href;
+
+    function sendMail(e) {
+        e.preventDefault();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+
+        let email = document.getElementById('email');
+        let message = document.getElementById('message');
+        let source = document.getElementById('source');
+        let theme = document.getElementById('theme');
+        xhttp.open("POST", this.getAttribute('action'), true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("email=" + email +  "&message=" + message + "&source=" + source + "&theme=" + theme);
+    }
+</script>
   </body>
   </html>
